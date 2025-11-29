@@ -1,0 +1,543 @@
+{
+  "device_type": "neptun-base",
+  "title": "Neptun Base",
+  "group": "g-leakage",
+  "device": {
+    "name": "Neptun Base",
+    "id": "neptun-base",
+    "groups": [
+      {
+        "title": "Settings",
+        "id": "settings",
+        "order": 0
+      },
+      {
+        "title": "Channels",
+        "id": "channels",
+        "order": 1
+      }
+    ],
+    "channels": [
+      {
+        "name": "device_type",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 0,
+        "type": "text",
+        "format": "u16",
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "ean_13_id",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "1:0:24",
+        "type": "text",
+        "format": "u64",
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "firmware_version",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 4,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "modbus_id",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 5,
+        "type": "value",
+        "format": "u16",
+        "readonly": false,
+        "group": "channels"
+      },
+      {
+        "name": "modbus_boud_rate",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 6,
+        "type": "value",
+        "format": "u16",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "enum_titles": [
+          "1200",
+          "2400",
+          "4800",
+          "9600",
+          "19200",
+          "38400",
+          "57600",
+          "115200"
+        ],
+        "readonly": false,
+        "group": "channels"
+      },
+      {
+        "name": "alarm_duration_minutes",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 7,
+        "type": "value",
+        "format": "u16",
+        "readonly": false,
+        "group": "channels"
+      },
+      {
+        "name": "valve_switch_duration_minutes",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 8,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "valve_service_interval_days",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 9,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "enable_sound",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "10:0:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "disable_sound",
+          "enable_sound"
+        ],
+        "readonly": false,
+        "group": "channels"
+      },
+      {
+        "name": "open_valves",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "10:1:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "close_valves",
+          "open_valves"
+        ],
+        "readonly": false,
+        "group": "channels"
+      },
+      {
+        "name": "leakage_detected",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:0:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "no_leakage",
+          "leakage"
+        ],
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "valves_closed",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:1:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "valves_opened",
+          "valves_closed"
+        ],
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "in_service_mode",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:2:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "not_in_service",
+          "in_service"
+        ],
+        "readonly": true,
+        "group": "channels"
+      },
+      {
+        "name": "reboot_flag",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 12,
+        "type": "switch",
+        "format": "u16",
+        "readonly": false,
+        "group": "channels"
+      }
+    ],
+    "parameters": [
+      {
+        "id": "device_type",
+        "title": "device_type",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 0,
+        "type": "text",
+        "format": "u16",
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "ean_13_id",
+        "title": "ean_13_id",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "1:0:24",
+        "type": "text",
+        "format": "u64",
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "firmware_version",
+        "title": "firmware_version",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 4,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "modbus_id",
+        "title": "modbus_id",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 5,
+        "type": "value",
+        "format": "u16",
+        "readonly": false,
+        "group": "settings"
+      },
+      {
+        "id": "modbus_boud_rate",
+        "title": "modbus_boud_rate",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 6,
+        "type": "value",
+        "format": "u16",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "enum_titles": [
+          "1200",
+          "2400",
+          "4800",
+          "9600",
+          "19200",
+          "38400",
+          "57600",
+          "115200"
+        ],
+        "readonly": false,
+        "group": "settings"
+      },
+      {
+        "id": "alarm_duration_minutes",
+        "title": "alarm_duration_minutes",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 7,
+        "type": "value",
+        "format": "u16",
+        "readonly": false,
+        "group": "settings"
+      },
+      {
+        "id": "valve_switch_duration_minutes",
+        "title": "valve_switch_duration_minutes",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 8,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "valve_service_interval_days",
+        "title": "valve_service_interval_days",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 9,
+        "type": "value",
+        "format": "u16",
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "enable_sound",
+        "title": "enable_sound",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "10:0:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "disable_sound",
+          "enable_sound"
+        ],
+        "readonly": false,
+        "group": "settings"
+      },
+      {
+        "id": "open_valves",
+        "title": "open_valves",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "10:1:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "close_valves",
+          "open_valves"
+        ],
+        "readonly": false,
+        "group": "settings"
+      },
+      {
+        "id": "leakage_detected",
+        "title": "leakage_detected",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:0:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "no_leakage",
+          "leakage"
+        ],
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "valves_closed",
+        "title": "valves_closed",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:1:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "valves_opened",
+          "valves_closed"
+        ],
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "in_service_mode",
+        "title": "in_service_mode",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": "11:2:1",
+        "type": "switch",
+        "format": "u16",
+        "enum": [
+          0,
+          1
+        ],
+        "enum_titles": [
+          "not_in_service",
+          "in_service"
+        ],
+        "readonly": true,
+        "group": "settings"
+      },
+      {
+        "id": "reboot_flag",
+        "title": "reboot_flag",
+        "order": 0,
+        "default": 0,
+        "required": false,
+        "reg_type": "holding",
+        "address": 12,
+        "type": "switch",
+        "format": "u16",
+        "readonly": false,
+        "group": "settings"
+      }
+    ],
+    "translations": {
+      "en": {
+        "Channels": "Channels",
+        "Settings": "Settings",
+        "device_type": "Device type",
+        "ean_13_id": "Serial number",
+        "firmware_version": "Firmware version",
+        "modbus_id": "Modbus address",
+        "modbus_boud_rate": "Modbus baud rate",
+        "alarm_duration_minutes": "Alarm duration",
+        "valve_switch_duration_minutes": "Valve power time",
+        "valve_service_interval_days": "Valve service interval",
+        "disable_sound": "Disable sound",
+        "enable_sound": "Enable sound",
+        "close_valves": "Close valves",
+        "open_valves": "Open valves",
+        "no_leakage": "No leakage",
+        "leakage_detected": "Leakage detected",
+        "valves_opened": "Valves opened",
+        "valves_closed": "Valves closed",
+        "not_in_service_mode": "Service mode off",
+        "in_service_mode": "Service mode on",
+        "reboot_flag": "Reboot"
+      },
+      "ru": {
+        "Channels": "Каналы",
+        "Settings": "Настройки",
+        "device_type": "Тип устройства",
+        "ean_13_id": "Серийный номер",
+        "firmware_version": "Версия ПО",
+        "modbus_id": "Modbus адрес",
+        "modbus_boud_rate": "Modbus Boud Rate",
+        "alarm_duration_minutes": "Время работы тревоги",
+        "valve_switch_duration_minutes": "Время подачи напряжения на краны",
+        "valve_service_interval_days": "Время сервисного обслуживания кранов",
+        "disable_sound": "Выключить звук",
+        "enable_sound": "Включить звук",
+        "close_valves": "Закрыть краны",
+        "open_valves": "Открыть краны",
+        "no_leakage": "Утечки нет",
+        "leakage_detected": "Обнаружена утечка",
+        "valves_opened": "Краны открыты",
+        "valves_closed": "Краны закрыты",
+        "not_in_service_mode": "Режим обслуживания выключен",
+        "in_service_mode": "Режим обслуживания включен",
+        "reboot_flag": "Перезагрузка"
+      }
+    }
+  }
+}
