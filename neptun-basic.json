@@ -196,7 +196,6 @@
         "required": false,
         "reg_type": "holding",
         "address": "1:0:24",
-        "type": "text",
         "format": "u64",
         "readonly": false,
         "group": "settings"
@@ -207,7 +206,6 @@
         "required": false,
         "reg_type": "holding",
         "address": 5,
-        "type": "value",
         "format": "u16",
         "readonly": false,
         "group": "settings"
@@ -218,7 +216,6 @@
         "required": false,
         "reg_type": "holding",
         "address": 6,
-        "type": "value",
         "format": "u16",
         "enum": [
           0,
@@ -249,7 +246,6 @@
         "required": false,
         "reg_type": "holding",
         "address": 7,
-        "type": "value",
         "format": "u16",
         "readonly": false,
         "group": "settings"
@@ -260,15 +256,14 @@
         "required": false,
         "reg_type": "holding",
         "address": "10:0:1",
-        "type": "switch",
         "format": "u16",
         "enum": [
           0,
           1
         ],
         "enum_titles": [
-          "disable_sound",
-          "enable_sound"
+          "no",
+          "yes"
         ],
         "readonly": false,
         "group": "settings"
@@ -296,6 +291,8 @@
         "valves_closed": "Valves closed",
         "not_in_service_mode": "Service mode off",
         "in_service_mode": "Service mode on",
+        "no": "No",
+        "yes": "Yes",
         "reboot_flag": "Reboot"
       },
       "ru": {
@@ -319,6 +316,8 @@
         "valves_closed": "Краны закрыты",
         "not_in_service_mode": "Режим обслуживания выключен",
         "in_service_mode": "Режим обслуживания включен",
+        "no": "Нет",
+        "yes": "Да",
         "reboot_flag": "Перезагрузка"
       }
     }
