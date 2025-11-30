@@ -25,7 +25,7 @@
         "required": false,
         "reg_type": "holding",
         "address": 0,
-        "type": "text",
+        "type": "value",
         "format": "u16",
         "readonly": true,
         "group": "channels"
@@ -35,7 +35,8 @@
         "required": false,
         "reg_type": "holding",
         "address": "1:0:24",
-        "type": "text",
+        "type": "value",
+        "units": "EAN-13",
         "format": "u64",
         "readonly": true,
         "group": "channels"
@@ -66,6 +67,7 @@
         "reg_type": "holding",
         "address": 7,
         "type": "value",
+        "units": "minutes",
         "format": "u16",
         "readonly": true,
         "group": "channels"
@@ -76,6 +78,7 @@
         "reg_type": "holding",
         "address": 8,
         "type": "value",
+        "units": "minutes",
         "format": "u16",
         "readonly": true,
         "group": "channels"
@@ -86,6 +89,7 @@
         "reg_type": "holding",
         "address": 9,
         "type": "value",
+        "units": "days",
         "format": "u16",
         "readonly": true,
         "group": "channels"
@@ -295,6 +299,8 @@
         "in_service_mode": "Service mode on",
         "no": "No",
         "yes": "Yes",
+        "minutes": "min(s)",
+        "days": "day(s)",
         "reboot_flag": "Reboot"
       },
       "ru": {
@@ -320,6 +326,8 @@
         "in_service_mode": "Режим обслуживания включен",
         "no": "Нет",
         "yes": "Да",
+        "minutes": "минут",
+        "days": "дней",
         "reboot_flag": "Перезагрузка"
       }
     }
